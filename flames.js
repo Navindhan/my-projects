@@ -5,8 +5,8 @@
 
 	function flames(){		
 		if(user.value!="" && crush.value!=""){						
-			var name1=user.value.replaceAll(" ","");			
-			var name2=crush.value.replaceAll(" ","");
+			var name1=user.value.replace(" ","");			
+			var name2=crush.value.replace(" ","");
 			user.value="";
 			crush.value="";
 			name1=name1.toLowerCase();
