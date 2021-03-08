@@ -1,0 +1,156 @@
+*{
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+			box-sizing: border-box;
+		}
+		body{
+			width: 100%;
+			height: 100vh;
+			background: #f00057;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			display: flex;
+			overflow-y: auto;
+		}
+		.container{
+			position: relative;
+			width: calc(100% - 100px);
+			height: calc(100% - 100px);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			background: #ff1167;			
+			overflow-y: auto;
+		}		
+		.container .box{
+			position: relative;
+			width: calc(60% - 50px);
+			height: calc(100% - 50px);
+			background: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			border-radius: 10px;
+			overflow-y: auto;
+		}
+		.container div{
+			margin: 20px;
+		}
+		.container .box h1{
+			text-align: center;
+			padding: 10px;
+			font-size: 300%;
+			color: #ff0057;
+		}
+		.container .box input{
+			width: calc(100% - 50px);
+			height: calc(20% - 10px);
+			padding: 0 3%;
+			font-size: 250%;
+		}
+		.container .box button{
+			width: calc(80% - 50px);
+			height: calc(15% - 10px);	
+			border: 2px solid #ff0057;
+			box-shadow: 2px 3px 10px #000;
+			background: #ff0057;
+			font-size: 200%;
+			letter-spacing: 2px;
+			cursor: pointer;
+			outline: none;
+			color: #fff;
+		}
+		.container .box button:hover{
+			background: #fff;
+			color: #ff0057;
+			box-shadow: 0px 0px 3px #000;
+		}
+		.container .flames-box{
+			position: relative;
+			width: calc(30% - 10px);
+			height: calc(80% - 10px);
+			background: #fff;
+			border-radius: 5px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}		
+		.container .flames-box img{
+			position: relative;
+			width: calc(100% - 4px);
+			height: calc(100% - 4px);
+			object-fit: cover;				
+		}
+		.container .flames-box h1.final{
+			position: absolute;
+			bottom: 10px;
+			width: 100%;	
+			color: #ff0057;
+			text-shadow: 0 0 10px #000;
+			text-transform: uppercase;
+		}
+		@media(max-width: 1000px){
+			.container{
+				height: calc(100% - 200px);				
+			}
+			.container div{
+				margin: 5px;
+			}
+			.container .box{
+				width: calc(100% - 50px);
+				height: calc(70% - 10px);
+			}
+			.container .flames-box{
+				width: calc(40% - 10px);
+				height: calc(30% + 100px);
+			}
+		}
+		@media(max-width: 800px){
+			.container{
+				height: calc(100% - 50px);				
+			}
+			.container div{
+				margin: 5px;
+			}
+			.container .box{
+				width: calc(100% - 50px);
+				height: calc(75% - 10px);
+			}
+			.container .flames-box{
+				width: calc(70% - 50px);
+				height: calc(50% + 100px);
+			}
+			.container .flames-box h1.final{
+				font-size: 25px;
+			}
+		}
+		@media(max-width: 600px){
+			.container{
+				height: calc(100% - 10px);				
+			}
+			.container div{
+				margin: 5px;
+			}
+			.container .box{
+				width: calc(100% - 50px);
+				height: calc(70% - 10px);
+			}
+			.container .box h1{
+				font-size: 250%;
+			}
+			.container .flames-box{
+				width: calc(70% - 10px);
+				height: calc(30% + 100px);
+			}
+			.container .flames-box h1.final{
+				font-size: 25px;
+			}
+			.container .box input{				
+				font-size: 200%;
+			}
+		}
