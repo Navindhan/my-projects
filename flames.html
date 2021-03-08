@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flames</title>
+	<link rel="stylesheet" type="text/css" href="flames.css">
+</head>
+<body>
+	<div class="container">
+		<div class="box">
+			<h1>Welcome To FLAMES Game!</h1>
+			<input type="text" id="user" placeholder="Enter Your Name" />
+			<input type="text" id="crush" placeholder="Enter Your Name" />
+			<button id="btn">Submit</button>
+		</div>
+		<div class="flames-box">
+			
+		</div>
+	</div>
+</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyAhHWFXPUquYt7mv-_7LcSvT3bY2Iq88Bw",
+    authDomain: "flamesgame-ae895.firebaseapp.com",
+    projectId: "flamesgame-ae895",
+    storageBucket: "flamesgame-ae895.appspot.com",
+    messagingSenderId: "669170486418",
+    appId: "1:669170486418:web:efdf6f48c85c4cdd9faa4b",
+    measurementId: "G-5P06DPJ146"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script type="text/javascript" src="flames.js"></script>
+</html>
