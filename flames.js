@@ -86,7 +86,7 @@ btn.addEventListener('click',function(e){
 		var e_list=[["enemies1", 1.27], ["enemies2", 1.5], ["enemies3", 1], ["enemies4", 1.11]];
 		var s_list=[["siblings1", 0.67], ["siblings2", 1], ["siblings3", 1]];
 		
-		var c_list=[["counter1", 1.78], ["counter2", 1.16], ["counter3", 1], ["counter4", 1.33], ["counter5", 1.33]];
+		var c_list=[["counter1", 1.78], ["counter2", 1.16], ["counter3", 1], ["counter4", 1.33], ["counter5", 1.33], ["counter6", 1]];
 		
 		var images=[{"result" : "Friends", "image" : f_list}, {"result" : "Lovers", "image" : l_list},
 		 {"result" : "Affectionate", "image" : a_list}, {"result" : "Marriage", "image" : m_list},
