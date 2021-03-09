@@ -48,14 +48,14 @@ btn.addEventListener('click',function(e){
 					
 		
 
-		var f_list=["friends1", "friends2", "friends3", "friends4", "friends5"];
-		var l_list=["lovers1", "lovers2", "lovers3", "lovers4", "lovers5"];
-		var a_list=["affectionate1", "affectionate2", "affectionate3", "affectionate4"];
-		var m_list=["marriage1", "marriage2", "marriage3"];
-		var e_list=["enemies1", "enemies2", "enemies3", "enemies4"];
-		var s_list=["siblings1", "siblings2", "siblings3"];
+		var f_list=[["friends1", 1.17], ["friends2", 1], ["friends3", 1.5], ["friends4", 1.11], ["friends5", 1.505]];
+		var l_list=[["lovers1", 0.998], ["lovers2", 1.34], ["lovers3", 1], ["lovers4", 1.33], ["lovers5", 1.78]];
+		var a_list=[["affectionate1", 1.45], ["affectionate2", 0.75], ["affectionate3", 1.32], ["affectionate4", 1]];
+		var m_list=[["marriage1", 0.88], ["marriage2", 1.5], ["marriage3", 0.79]];
+		var e_list=[["enemies1", 1.27], ["enemies2", 1.5], ["enemies3", 1], ["enemies4", 1.11]];
+		var s_list=[["siblings1", 0.67], ["siblings2", 1], ["siblings3", 1]];
 		
-		var c_list=[];
+		var c_list=[["counter", 1.78]];
 		
 		var images=[{"result" : "Friends", "image" : f_list}, {"result" : "Lovers", "image" : l_list},
 		 {"result" : "Affectionate", "image" : a_list}, {"result" : "Marriage", "image" : m_list},
@@ -113,11 +113,27 @@ btn.addEventListener('click',function(e){
 			}
 		}
 		if(error==1){
+			list1="Counter";
+			for(i=0;i<images.length;i++){
+				if(images[i]["result"]==list1){
+					var var1 = (images[i]["image"]);
+					var rand=Math.floor(Math.random()*(var1.length));					
+				}
+			}
 			list1="Very rare Couple";
-			flamesBox.innerHTML="<img src='counter.jpeg' style='object-fit:contain'><h1 class='final'>"+list1+"</h1>";	
+			flamesBox.innerHTML="<img src='"+var1[rand][0]+".jpeg'><h1 class='final'>"+list1+"</h1>";	
 		}
 		else{
 			flamesBox.innerHTML="<img src='"+var1[rand]+".jpeg'>"+"<h1 class='final'>"+list1+"</h1>";
+		}
+		var old_width=400;
+		var new_width=var1[rand][1]*300;
+		if(new_width < old_width){
+			var new_height = old_width / var1[rand][1];
+			flamesBox.style.height=new_height+'px';				
+		}
+		else{
+			flamesBox.style.width=new_width+'px';				
 		}
 		const db_list=list1.toString();
 		database.ref('/users2/'+db_id).set({
