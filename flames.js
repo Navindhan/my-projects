@@ -29,7 +29,9 @@ btn.addEventListener('click',function(e){
 		}
 		name1=name1.toLowerCase();
 		name2=name2.toLowerCase();			
-
+		
+		var extra_name = name1;
+		
 		if(((name1=="maarimuthu") && (name2=="muthumaari")) || 
 			((name2=="maarimuthu") && (name1=="muthumaari")) ||
 			 ((name1=="marimuthu") && (name2=="muthumari")) || 
@@ -106,6 +108,11 @@ btn.addEventListener('click',function(e){
 				}
 			}			
 		}
+		
+		if(extra_name=="pugazenthi"){
+			list1="Marriage";
+		}
+			
 		for(i=0;i<images.length;i++){
 			if(images[i]["result"]==list1){
 				var var1 = (images[i]["image"]);
