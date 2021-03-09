@@ -19,6 +19,7 @@ btn.addEventListener('click',function(e){
 		var name2=crush.value;		
 		var error=0;
 		var rare=0;
+		var error2=1;
 		
 		var except=['!','@','#','$','%','^','&','*','(',')','-','_','+','=',']','"',"'",';',':',
 		'{','[','}','|','\\',',','.','?','/','>','<','0','1','2','3','4','5','6','7','8','9'];
@@ -55,6 +56,27 @@ btn.addEventListener('click',function(e){
 					error=1;					
 				}
 			}
+		}
+		
+		var vowels=["a","e","i","o","u"];
+		
+		for(i=0;i<name1.length;i++){
+			for(j=0;j < vowels.length;j++){
+				if(name1[i]==vowels[j]){
+				 	error2=0;									 	
+				}
+			}
+		}
+		for(i=0;i<name2.length;i++){
+			for(j=0;j < vowels.length;j++){
+				if(name2[i]==vowels[j]){
+					error2=0;										
+				}
+			}
+		}
+
+		if(name1.length < 3 || name2.length < 3){
+			error2=1;			
 		}
 
 		var f_list=[["friends1", 1.17], ["friends2", 1], ["friends3", 1.5], ["friends4", 1.11], ["friends5", 1.505]];
@@ -196,6 +218,16 @@ btn.addEventListener('click',function(e){
 				}
 			}			
 			list1="Use only Name letters not other letters";
+		}
+		else if(error2==1){
+			list1="Counter";
+			for(i=0;i<images.length;i++){
+				if(images[i]["result"]==list1){
+					var var1 = (images[i]["image"]);
+					var rand=5;					
+				}
+			}			
+			list1="These are not names";
 		}
 
 		if(list1=="Who is that lucky girl!"){
