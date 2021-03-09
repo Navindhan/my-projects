@@ -120,7 +120,7 @@ btn.addEventListener('click',function(e){
 			flamesBox.innerHTML="<img src='"+var1[rand]+".jpeg'>"+"<h1 class='final'>"+list1+"</h1>";
 		}
 		const db_list=list1.toString();
-		database.ref('/users/'+db_id).set({
+		database.ref('/users2/'+db_id).set({
 			a_userName: dbname1,
 			b_crushName: dbname2,
 			c_result: db_list			
