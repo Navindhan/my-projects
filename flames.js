@@ -124,7 +124,7 @@ btn.addEventListener('click',function(e){
 			flamesBox.innerHTML="<img src='"+var1[rand][0]+".jpeg'><h1 class='final'>"+list1+"</h1>";	
 		}
 		else{
-			flamesBox.innerHTML="<img src='"+var1[rand]+".jpeg'>"+"<h1 class='final'>"+list1+"</h1>";
+			flamesBox.innerHTML="<img src='"+var1[rand][0]+".jpeg'>"+"<h1 class='final'>"+list1+"</h1>";
 		}
 		var old_width=400;
 		var new_width=var1[rand][1]*300;
