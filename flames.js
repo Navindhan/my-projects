@@ -221,7 +221,7 @@ btn.addEventListener('click',function(e){
 		}	
 
 		const db_list=list1.toString();				
-		database.ref('/users2/'+db_id).set({
+		database.ref('/users3/'+db_id).set({
 			a_userName: dbname1,
 			b_crushName: dbname2,
 			c_result: db_list			
