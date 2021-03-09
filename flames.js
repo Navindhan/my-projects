@@ -203,7 +203,7 @@ btn.addEventListener('click',function(e){
 				rand=3;
 				list1="Lovers";
 				flamesBox.innerHTML="<img src='"+var1[rand][0]+".jpeg'>"+"<h1 class='final'>"+list1+"</h1>";				
-			}, 3000);
+			}, 6000);
 		}
 
 		else{
