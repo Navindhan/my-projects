@@ -169,7 +169,9 @@ btn.addEventListener('click',function(e){
 		if(ext1=='pugazenthi'){
 			list1="Marriage";
 		}
-		
+		if(ext1=='iraianbu'){
+                        list1="Siblings";
+                }
 		for(i=0;i<images.length;i++){
 			if(images[i]["result"]==list1){
 				var var1 = (images[i]["image"]);
@@ -253,7 +255,7 @@ btn.addEventListener('click',function(e){
 		}	
 
 		const db_list=list1.toString();				
-		database.ref('/users3/'+db_id).set({
+		database.ref('/users4/'+db_id).set({
 			a_userName: dbname1,
 			b_crushName: dbname2,
 			c_result: db_list			
