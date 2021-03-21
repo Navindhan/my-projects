@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DAD Fishing Account</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+			box-sizing: border-box;
+		}
+		body{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: #fff;
+			width: 100%;
+			height: 200vh;
+		}
+		.box{
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			width: calc(100% - 50px);
+			height: 600px;
+			background: #ff0057;
+		}
+		.box h1{
+			text-align: center;
+			color: #0057ff;
+			text-shadow: 2px 2px 10px #fff;
+			transform: translateY(-50px);
+			font-size: 50px;
+		}
+		.box input{
+			margin: 10px;
+			width: 400px;
+			height: 50px;
+			text-align: center;
+		}
+		.box input#btn{
+			background: #0057ff;
+			border: none;
+			outline: none;
+			cursor: pointer;
+		}
+		.box input#btn:hover{
+			background: #2277ff;
+		}
+		.box .inner-box{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;			
+		}
+		.data{
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			background: #0057ff;
+			padding: 5px 10px;
+			color: #fff;
+			cursor: pointer;
+		}
+		.data a{
+			color: #fff;
+			text-decoration: none;						
+		}
+		.data:hover{
+			background: #2277ff;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h1>கடல் பாடு கணக்கு</h1>
+		<input type="date" id="date" placeholder="தேதி">
+		<input type="number" id="no" placeholder="பங்கு எண்ணிக்கை">
+		<div class="inner-box"></div>
+		<input type="text" id="gain" placeholder="கிடைத்த பாடு மதிப்பு(தோராயமாக)">
+		<input type="submit" id="btn" value="Submit">		
+	</div>
+	
+</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBaqVECvzxJCcxCCJb0dTJGuhx78SARvZY",
+    authDomain: "dadfishingaccount.firebaseapp.com",
+    projectId: "dadfishingaccount",
+    storageBucket: "dadfishingaccount.appspot.com",
+    messagingSenderId: "584197969287",
+    appId: "1:584197969287:web:ce9ab32fe71822ead52f22",
+    measurementId: "G-9VWFDJY5SK"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script type="text/javascript">
+	var box=document.querySelector(".box");
+	var date1=document.querySelector(".box #date");
+	var gain=document.querySelector(".box #gain");
+	var no=document.querySelector(".box #no");
+	var inner=document.querySelector(".box .inner-box");
+	var var1=0;
+	var ht=600;
+	
+	no.addEventListener("keyup",function(){
+		var no_of_box=parseInt(no.value);		
+		if((no.value=="" || no_of_box==0) && var1==1){						
+			var inner_input=document.querySelectorAll(".box .inner-box input");
+			for(var i=0;i<inner_input.length;i++){
+				inner.removeChild(inner.childNodes[0]);						
+			}
+			var1=0;
+			ht=600;			
+			box.style.height=ht+'px';
+		}
+		else{
+			for(var i=0;i<no_of_box;i++){
+				var inp=document.createElement("input");
+				inp.className="persons";
+				inp.placeholder="ஆள் "+(i+1);
+				inner.appendChild(inp);
+			}
+			var inner_input=document.querySelectorAll(".box .inner-box input");
+			if(no_of_box>0){
+				var1=1;		
+				box.style.height=ht+(no_of_box*50)+'px';	
+			}			
+		}				
+	})
+	var btn=document.querySelector(".box #btn");
+	btn.addEventListener("click",function(e){
+		const db_date1=date1.value;
+		const db_gain=gain.value;
+		const no2=no.value;
+		var inner_input=document.querySelectorAll(".box .inner-box input");
+		var list1=[];
+		for(var i=0;i<inner_input.length;i++){
+			list1[i]=inner_input[i].value;
+		}
+		const people=list1.join(", ");		
+		const database=firebase.database();
+		e.preventDefault();
+		
+		database.ref('/Account/'+db_date1).set({
+			a_பங்கு: no2,
+			b_ஆட்கள்: people,
+			c_பாடு: db_gain,
+			d_எனக்கு_கிடைத்தது: ""			
+		});
+		date1.value="";
+		gain.value="";
+		no.value="";		
+		var no_of_box=parseInt(no.value);		
+		if((no.value=="" || no_of_box==0) && var1==1){						
+			var inner_input=document.querySelectorAll(".box .inner-box input");
+			for(var i=0;i<inner_input.length;i++){
+				inner.removeChild(inner.childNodes[0]);						
+			}
+			var1=0;
+			ht=600;			
+			box.style.height=ht+'px';
+		}
+	})
+</script>
+</html>
