@@ -190,6 +190,9 @@
 	})
 	var btn=document.querySelector(".box #btn");
 	btn.addEventListener("click",function(e){
+		if(date1.value==""){			
+			date1.value="2000-01-01";			
+		}
 		const db_date1=date1.value;
 		const db_gain=gain.value;
 		const no2=no.value;
