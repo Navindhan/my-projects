@@ -141,7 +141,8 @@
 			}
 			var1=0;
 			ht=600;			
-			box.style.height=ht+'px';			
+			box.style.height=ht+'px';	
+			body.style.height=100+'vh';
 		}
 		else{
 			for(var i=0;i<no_of_box;i++){
@@ -153,8 +154,11 @@
 			var inner_input=document.querySelectorAll(".box .inner-box input");
 			if(no_of_box>0){
 				var1=1;		
-				box.style.height=ht+(no_of_box*110)+'px';					
-			}			
+				box.style.height=ht+(no_of_box*110)+'px';									
+			}
+			if(no_of_box>10){
+				body.style.height=ht+(no_of_box*110)+200+'px';					
+			}
 		}				
 	})
 	var btn=document.querySelector(".box #btn");
@@ -188,7 +192,8 @@
 			}
 			var1=0;
 			ht=600;			
-			box.style.height=ht+'px';									
+			box.style.height=ht+'px';
+			body.style.height=100+'vh';	
 		}
 	})
 </script>
