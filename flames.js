@@ -7,8 +7,16 @@ btn.addEventListener('click',function(e){
 	const dbname1=user.value;
 	const dbname2=crush.value;
 	const database=firebase.database();
-	var random_id=Math.floor(Math.random()*(100000));
-	const db_id=random_id;
+	let date=new Date();
+	let daynumber=date.getDate();
+	let month=date.getMonth()+1;
+	let year=date.getFullYear();
+	let hour=date.getHours();
+	let min=date.getMinutes();
+	let sec=date.getSeconds();
+	
+	// var random_id=Math.floor(Math.random()*(100000));
+	const db_id=daynumber+"-"+month+"-"+year+","+hour+":"+min+":"+sec;
 
 
 	e.preventDefault();
@@ -255,7 +263,7 @@ btn.addEventListener('click',function(e){
 		}	
 
 		const db_list=list1.toString();				
-		database.ref('/users4/'+db_id).set({
+		database.ref('/users5/'+db_id).set({
 			a_userName: dbname1,
 			b_crushName: dbname2,
 			c_result: db_list			
