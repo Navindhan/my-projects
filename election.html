@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Model Election</title>
+	<title>Model Election Result</title>
 	<style type="text/css">
 		*{
 			padding: 0;
@@ -17,17 +17,21 @@
 			align-items: center;
 			background: #fff;
 		}
-		section{
+		.pre{
+			position: absolute;
+			top: 20%;
+			border: 3px solid #f00;
 			width: calc(100% - 100px);			
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
+			padding: 20px;
 		}
-		section h1{
-			color: #009;			
+		.pre h1{
+			color: #009;
 		}
-		section input{
+		.pre input{
 			width: 100%;
 			height: 50px;
 			text-align: center;
@@ -35,47 +39,7 @@
 			margin: 10px 0;			
 			border: 3px solid #000;
 		}
-		section ul{
-			width: 100%;			
-			display: flex;			
-			justify-content: center;
-			align-items: center;
-			flex-wrap: wrap;	
-		}
-		section ul li{
-			width: calc(50% - 20px);
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			background: #f00;
-			box-shadow: 1px 1px 10px #000;
-			cursor: pointer;
-			margin: 10px;
-		}
-		section ul li:hover{
-			background: #f55;
-		}
-		section ul li .image{
-			width: 200px;
-			height: 200px;
-			background: #ff5;
-			display: flex;
-			justify-content: center;
-			align-items: center;			
-		}
-		section ul li .image img{
-			width: calc(100% - 10px);
-			height: calc(100% - 10px);
-			object-fit: cover;
-		}
-		section ul li .party-name{
-			width: calc(100% - 200px);
-			font-size: 35px;
-			text-align: center;
-			color: #fff;
-			text-shadow: 1px 1px 10px #000;
-		}
-		section button{
+		.pre button{
 			border: none;
 			outline: none;
 			width: 100%;
@@ -86,9 +50,72 @@
 			background: #f00;
 			cursor: pointer;
 		}
-		section button:hover{
+		.pre button:hover{
 			background: #f55;
 		}
+		section{
+			position: absolute;
+			visibility: hidden;
+			width: calc(100% - 100px);			
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+		section h1{
+			color: #009;			
+		}
+		section ul{
+			width: 100%;			
+			display: flex;			
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;	
+		}
+		section li{
+			width: calc(50% - 20px);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: #f00;
+			box-shadow: 1px 1px 10px #000;
+			cursor: pointer;
+			margin: 10px;
+		}
+		section li:hover{
+			background: #f55;
+		}
+		section li .image{
+			width: 200px;
+			height: 200px;
+			background: #ff5;
+			display: flex;
+			justify-content: center;
+			align-items: center;			
+		}
+		section li .image img{
+			width: calc(100% - 10px);
+			height: calc(100% - 10px);
+			object-fit: cover;
+		}
+		section li .party-name{
+			width: calc(100% - 390px);
+			font-size: 35px;
+			text-align: center;
+			color: #fff;
+			text-shadow: 1px 1px 10px #000;
+		}
+		section li .vote{
+			width: 197px;
+			height: 197px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 3px solid #fff;
+			color: #fff;
+			font-size: 30px;
+		}
+		
 		@media(max-width: 980px){
 			body{
 				height: 1600px;
@@ -96,10 +123,10 @@
 			section{
 				width: calc(100% - 100px);
 			}
-			section h1{
+			section h1,.pre h1{
 				font-size: 60px;
 			}
-			section input,section button{
+			.pre input,.pre button{
 				height: 100px;
 				font-size: 40px;				
 			}
@@ -108,35 +135,48 @@
 			}
 		}
 		@media(max-width: 700px){
-			section h1{
+			section h1,.pre h1{
 				font-size: 40px;
 			}
-		}
+		}		
 	</style>
 </head>
 <body>
-	<section>
-		<h2>Result on 7-4-2021 4:00 PM</h2>
-		<h1>இந்த தேர்தலில் உங்கள் ஆதரவு எந்த கட்சிக்கு?</h1>
+	<div class="pre">
+		<h1>முடிவை பார்க்கும் முன் உங்கள் பெயரை உள்ளிடவும்</h1>
 		<input type="text" id="name" placeholder="Enter your name">
+		<button id="btn">Submit</button>
+	</div>
+	<section>		
+		<h1>Result of Model Election</h1>
+		<h2>மொத்த ஆதரவுகளின் எண்ணிக்கை <span style="color: #009">20</span></h2>
 		<ul>
 			<li id="0">
 				<div class="image"><img src="img1.jpeg"></div><div class="party-name">DMK</div>
+				<div class="vote">8 Votes</div>
 			</li>
 			<li id="1">
 				<div class="image"><img src="img2.jpeg"></div><div class="party-name">AIADMK</div>
+				<div class="vote">3 Votes</div>
 			</li>
 			<li id="2">
 				<div class="image"><img src="img3.jpeg"></div><div class="party-name">NTK</div>
+				<div class="vote">9 Votes</div>
 			</li>
 			<li id="3">
 				<div class="image"><img src="img4.png"></div><div class="party-name">AMMK</div>
+				<div class="vote">0 Vote</div>
 			</li>
 			<li id="4">
 				<div class="image"><img src="img5.png"></div><div class="party-name">MNM</div>
+				<div class="vote">0 Vote</div>
 			</li>
 		</ul>
-		<button id="btn">Submit</button>
+		<h2>அதிக ஆதரவை பெற்ற கட்சி</h2>
+		<ul><li id="rs">
+			<div class="image"><img src="img3.jpeg"></div><div class="party-name">NTK</div>
+			<div class="vote">9 Votes</div>
+		</li></ul>		
 	</section>
 </body>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -162,12 +202,11 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 </script>
-<script type="text/javascript">	
-
-	var inp=document.querySelector("section input");
-	var btn=document.querySelector("section button");
-	var li=document.querySelectorAll("section ul li");
-	var list1=['DMK','AIADMK','NTK','AMMK','MNM'];
+<script type="text/javascript">
+	var pre=document.querySelector(".pre");
+	var inp=document.querySelector(".pre input");
+	var btn=document.querySelector(".pre button");
+	var sect=document.querySelector("section");
 	btn.addEventListener("click",function(e){
 		if(inp.value==""){
 			inp.placeholder="Please Enter Your name";
@@ -176,60 +215,46 @@
 			inp.value="";
 			inp.placeholder="Please Enter Valid name";	
 		}
-		else{			
-			var var1=0;
-			var id_no;
-			for(var j=0;j<li.length;j++){
-				if(li[j].style.boxShadow=="rgb(0, 0, 255) 1px 1px 30px"){	
-					var1=1;
-					id_no=li[j].id;					
-					break;
-				}				
-			}
+		else{									
 			var temp_name=inp.value;
 			inp.value="";
-			if(var1==1){
-				inp.placeholder="Enter your name";
-				for(var j=0;j<li.length;j++){
-					if(li[j].style.boxShadow=="rgb(0, 0, 255) 1px 1px 30px"){	
-						li[j].style.boxShadow="1px 1px 10px #000";	
-					}				
-				}
-				let date=new Date();
-				let daynumber=date.getDate();
-				let month=date.getMonth()+1;
-				let year=date.getFullYear();
-				let hour=date.getHours();
-				let min=date.getMinutes();
-				let sec=date.getSeconds();						
-				const db_id=year+"-"+month+"-"+daynumber+","+hour+":"+min+":"+sec;
-
-				const database=firebase.database();
-				const db_name=temp_name;
-				const db_party=list1[id_no];
-
-				e.preventDefault();				
-				database.ref('/voters_list/'+db_id).set({
-					a_voterName: db_name,
-					b_vote: db_party				
-				});	
-			}
 			
-			else{
-				inp.placeholder="Please click party box also";	
-			}						
+			let date=new Date();
+			let daynumber=date.getDate();
+			let month=date.getMonth()+1;
+			let year=date.getFullYear();
+			let hour=date.getHours();
+			let min=date.getMinutes();
+			let sec=date.getSeconds();						
+			if(daynumber < 10){
+				daynumber="0"+daynumber;
+			}
+			if(month < 10){
+				month="0"+month;
+			}
+			if(hour < 10){
+				hour="0"+hour;
+			}
+			if(min < 10){
+				min="0"+min;
+			}
+			if(sec < 10){
+				sec="0"+sec;
+			}
+			const db_id=year+"-"+month+"-"+daynumber+","+hour+":"+min+":"+sec;
+
+			const database=firebase.database();
+			const db_name=temp_name;			
+
+			e.preventDefault();				
+			database.ref('/Users/'+db_id).set({
+				a_userName: db_name				
+			});
+			sect.style.position="relative";
+			sect.style.visibility="visible";
+			pre.style.visibility="hidden";									
+			
 		}		
 	})
-	for(var i=0;i<li.length;i++){
-		li[i].addEventListener('click',function(){
-			for(var j=0;j<li.length;j++){
-				if(li[j].style.boxShadow=="rgb(0, 0, 255) 1px 1px 30px"){
-					console.log("yes");
-					li[j].style.boxShadow="1px 1px 10px #000";
-				}				
-			}			
-			this.style.boxShadow="1px 1px 30px #00f";	
-		})
-	}
 </script>
 </html>
