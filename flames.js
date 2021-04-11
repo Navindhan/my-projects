@@ -15,8 +15,23 @@ btn.addEventListener('click',function(e){
 	let min=date.getMinutes();
 	let sec=date.getSeconds();
 	
+        if(daynumber<10){
+            daynumber='0'+daynumber;
+        }
+        if(month<10){
+            month='0'+month;
+        }
+        if(hour<10){
+            hour='0'+hour;
+        }
+        if(min<10){
+            min='0'+min;
+        }
+        if(sec<10){
+            sec='0'+sec;
+        }
 	// var random_id=Math.floor(Math.random()*(100000));
-	const db_id=daynumber+"-"+month+"-"+year+","+hour+":"+min+":"+sec;
+	const db_id=year+"-"+month+"-"+daynumber+","+hour+":"+min+":"+sec;
 
 
 	e.preventDefault();
@@ -263,7 +278,7 @@ btn.addEventListener('click',function(e){
 		}	
 
 		const db_list=list1.toString();				
-		database.ref('/users5/'+db_id).set({
+		database.ref('/users6/'+db_id).set({
 			a_userName: dbname1,
 			b_crushName: dbname2,
 			c_result: db_list			
