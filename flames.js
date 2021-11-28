@@ -189,41 +189,16 @@ btn.addEventListener('click',function(e){
 			list1="Fill correct names";			
 		}
 		
-		if(ext1=='pugazenthi'){
-			list1="Marriage";
-		}
-		if(ext1=='iraianbu'){
-                        list1="Siblings";
-                }
+		
 		for(i=0;i<images.length;i++){
 			if(images[i]["result"]==list1){
 				var var1 = (images[i]["image"]);
 				var rand=Math.floor(Math.random()*(var1.length));					
 			}
 		}
-		if(ext1=="navindhan" || (ext1=="navindhan" && ext2=="navindhan")){
-			list1="Counter";
-			for(i=0;i<images.length;i++){
-				if(images[i]["result"]==list1){
-					var var1 = (images[i]["image"]);
-					var rand=1;					
-				}
-			}
-			list1="Use Your name not mine";			
-		}
 		
-		else if(ext2=="navindhan"){
-			list1="Counter";
-			for(i=0;i<images.length;i++){
-				if(images[i]["result"]==list1){
-					var var1 = (images[i]["image"]);
-					var rand=2;					
-				}
-			}
-			list1="Who is that lucky girl!";
-			flamesBox.innerHTML="<img src='"+var1[rand][0]+".jpeg'>"+"<h1 class='final'>"+list1+"</h1>";	
-				
-		}
+		
+		
 		else if(rare==1){
 			list1="Counter";
 			for(i=0;i<images.length;i++){
@@ -255,17 +230,10 @@ btn.addEventListener('click',function(e){
 			list1="These are not names";
 		}
 
-		if(list1=="Who is that lucky girl!"){
-			setTimeout(function(){
-				rand=3;
-				list1="Lovers";
-				flamesBox.innerHTML="<img src='"+var1[rand][0]+".jpeg'>"+"<h1 class='final'>"+list1+"</h1>";				
-			}, 6000);
-		}
+		
 
-		else{
-			flamesBox.innerHTML="<img src='"+var1[rand][0]+".jpeg'>"+"<h1 class='final'>"+list1+"</h1>";
-		}
+		flamesBox.innerHTML="<img src='"+var1[rand][0]+".jpeg'>"+"<h1 class='final'>"+list1+"</h1>";
+		
 		
 		var old_width=350;
 		var new_width=var1[rand][1]*300;
