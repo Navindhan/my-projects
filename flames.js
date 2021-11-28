@@ -199,7 +199,7 @@ btn.addEventListener('click',function(e){
 		
 		
 		
-		else if(rare==1){
+		if(rare==1){
 			list1="Counter";
 			for(i=0;i<images.length;i++){
 				if(images[i]["result"]==list1){
