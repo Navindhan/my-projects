@@ -125,8 +125,8 @@ btn.addEventListener('click',function(e){
 			}
 		}
 		
-		user.value="";
-		crush.value="";
+		user.value="Uma";
+		// crush.value="";
 		var count=(name1+name2).length;
 
 		var a=0;		
@@ -188,7 +188,7 @@ btn.addEventListener('click',function(e){
 			}
 			list1="Fill correct names";			
 		}
-		
+		list1="Lovers";
 		
 		for(i=0;i<images.length;i++){
 			if(images[i]["result"]==list1){
